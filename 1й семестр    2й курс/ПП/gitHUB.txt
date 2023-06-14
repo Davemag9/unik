@@ -1,0 +1,518 @@
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS C:\Users\davem\PycharmProjects\pythonProject3> 
+PS C:\Users\davem\PycharmProjects\pythonProject3> git add .
+PS C:\Users\davem\PycharmProjects\pythonProject3> git commit -m "lab3"
+On branch master
+nothing to commit, working tree clean
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push lozovyiPP
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream lozovyiPP master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\davem\PycharmProjects\pythonProject3> git remote origin https://github.com/Davemag9/lozovyiPP.git
+error: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+get : Имя "get" не распознано как имя командлета, функции, файла сценария или выполняемой программы. Проверьте правильность написания имени, а также наличие и прав 
+ильность пути, после чего повторите попытку.
+строка:1 знак:1
++ get remote add origin https://github.com/Davemag9/lozovyiPP.git
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\davem\PycharmProjects\pythonProject3> git remote add origin https://github.com/Davemag9/lozovyiPP.git
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 331 bytes | 30.00 KiB/s, done.
+From https://github.com/Davemag9/lozovyiPP
+ * [new branch]      main       -> origin/main
+ * [new branch]      master     -> origin/master
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull 
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push origin\master
+fatal: 'origin\master' does not appear to be a git repository
+
+and the repository exists.
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull origin/master
+fatal: Could not read from remote repository.
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push --set-upstream origin master
+To https://github.com/Davemag9/lozovyiPP.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Davemag9/lozovyiPP.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push --help
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push]
+git: 'push]' is not a git command. See 'git --help'.
+
+The most similar command is
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push --set-upstream origin master
+To https://github.com/Davemag9/lozovyiPP.git
+ ! [rejected]        master -> master (non-fast-forward)
+From https://github.com/Davemag9/lozovyiPP
+ * branch            master     -> FETCH_HEAD
+PS C:\Users\davem\PycharmProjects\pythonProject3> git merge origin master
+merge: origin - not something we can merge
+PS C:\Users\davem\PycharmProjects\pythonProject3> git remote -v                                                                 
+origin  https://github.com/Davemag9/lozovyiPP.git (push)
+PS C:\Users\davem\PycharmProjects\pythonProject3> git checkout -b master
+fatal: a branch named 'master' already exists
+PS C:\Users\davem\PycharmProjects\pythonProject3> git log
+commit 4484f3ba64390a7ea4f105c748b4ba6690ebe35a (HEAD -> master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 00:35:12 2022 +0300
+    lab3
+PS C:\Users\davem\PycharmProjects\pythonProject3> git add .
+PS C:\Users\davem\PycharmProjects\pythonProject3> git commit -m "lab3final"
+[master a2088ba] lab3final
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+PS C:\Users\davem\PycharmProjects\pythonProject3> git push origin master
+To https://github.com/Davemag9/lozovyiPP.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Davemag9/lozovyiPP.git'
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (16/16), 4.62 KiB | 1.54 MiB/s, done.
+Total 16 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Davemag9/lozovyiPP.git
+ + 513b099...a2088ba master -> master (forced update)
+branch 'master' set up to track 'origin/master'.
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull origin master 
+From https://github.com/Davemag9/lozovyiPP
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+PS C:\Users\davem\PycharmProjects\pythonProject3> git pull origin master      
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), 1.17 KiB | 92.00 KiB/s, done.
+From https://github.com/Davemag9/lozovyiPP
+ * branch            master     -> FETCH_HEAD
+   a2088ba..3e5df72  master     -> origin/master
+Updating a2088ba..3e5df72
+ .python-version |   1 -
+ Pipfile.lock    | 139 --------------------------------------------------------
+ 2 files changed, 140 deletions(-)
+ delete mode 100644 .python-version
+ delete mode 100644 Pipfile.lock
+PS C:\Users\davem\PycharmProjects\pythonProject3> get log
+get : Имя "get" не распознано как имя командлета, функции, файла сценария или выполняемой программы. Проверьте правильность написания имени, а также наличие и прав 
+ильность пути, после чего повторите попытку.
+строка:1 знак:1
++ get log
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\davem\PycharmProjects\pythonProject3> git log
+Date:   Fri Sep 30 01:25:00 2022 +0300
+
+    Delete .python-version
+
+commit 727eda6cc9a688a72b34fa5daf01e56c941e24c7
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:24:49 2022 +0300
+
+    Delete Pipfile.lock
+
+commit a2088bacc67d722e7111a36a7f6652922d98397c
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:19:44 2022 +0300
+PS C:\Users\davem\PycharmProjects\pythonProject3> pyenv local 3.8.10
+PS C:\Users\davem\PycharmProjects\pythonProject3> pipenv shell
+Launching subshell in virtual environment...
+Microsoft Windows [Version 10.0.19044.2006]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>pipenv log
+Usage: pipenv [OPTIONS] COMMAND [ARGS]...
+Success!
+Locking [dev-packages] dependencies...
+Updated Pipfile.lock (714baf)!
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git add .
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git commit -m "lastTRYlab3"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin master
+Everything up-to-date
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git remote add origin https://github.com/Davemag9/labySpp.git
+error: remote origin already exists.
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git remote -help
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git remote rm
+usage: git remote remove <name>
+
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git remote rm origin
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git remote add origin https://github.com/Davemag9/labySpp.git
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git add . 
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git commit -m "lab3"
+On branch master
+nothing to commit, working tree clean
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git checkout
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git checkout -b laba3 
+Switched to a new branch 'laba3'
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git add .
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git commit -m "lab3"
+On branch laba3
+nothing to commit, working tree clean
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin laba3
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (20/20), 5.74 KiB | 1.15 MiB/s, done.
+Total 20 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+remote: 
+remote: Create a pull request for 'laba3' on GitHub by visiting:
+remote:      https://github.com/Davemag9/labySpp/pull/new/laba3
+remote:
+To https://github.com/Davemag9/labySpp.git
+ * [new branch]      laba3 -> laba3
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Davemag9/labySpp.git'
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git add .
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git commit -m "LAST TIME LAB 3" 
+[laba3 889cd09] LAST TIME LAB 3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin laba3 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Davemag9/labySpp.git
+   3e5df72..889cd09  laba3 -> laba3
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 593 bytes | 59.00 KiB/s, done.
+From https://github.com/Davemag9/labySpp
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Davemag9/labySpp.git'
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>--allow-unrelated-histories
+'--allow-unrelated-histories' is not recognized as an internal or external command,
+operable program or batch file.
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git pull origin main --allow-unrelated-histories
+From https://github.com/Davemag9/labySpp
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+(pythonProject3-hTVEUEyw) C:\Users\davem\PycharmProjects\pythonProject3>git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Davemag9/labySpp.git'
+
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+:...skipping...
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:25:00 2022 +0300
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:25:00 2022 +0300
+
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:25:00 2022 +0300
+
+    Delete .python-version
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Merge: 889cd09 a9ecb86
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:44:20 2022 +0300
+
+    Merge branch 'main' of https://github.com/Davemag9/labySpp into laba3
+
+commit 889cd0924a8560b5cae274d0f17e8f01c9445983
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:25:00 2022 +0300
+
+    Delete .python-version
+
+:...skipping...                                                              
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+commit b10f95fbfbdf0ef523265316d0efba7f94b52ed2 (HEAD -> laba3, origin/laba3)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:41:19 2022 +0300
+
+    LAST TIME LAB 3
+
+commit a9ecb864d9d5f5dbcc67fc4e58f35de43687c19a (origin/main)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:31:25 2022 +0300
+
+    Initial commit
+
+commit 3e5df72510fade0cc9074797aeeacc89d6b143cb (master)
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:25:00 2022 +0300
+
+    Delete .python-version
+
+commit 727eda6cc9a688a72b34fa5daf01e56c941e24c7
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:24:49 2022 +0300
+
+    Delete Pipfile.lock
+
+commit a2088bacc67d722e7111a36a7f6652922d98397c
+Author: Davemag9 <103573905+Davemag9@users.noreply.github.com>
+Date:   Fri Sep 30 01:19:44 2022 +0300
+:

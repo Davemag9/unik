@@ -1,0 +1,80 @@
+CREATE SCHEMA flybooking;
+USE flybooking ;
+ 
+CREATE TABLE `airport` (
+  `airport_id` INT NOT NULL,
+  `airport_name` VARCHAR(45) NOT NULL,
+  `city` VARCHAR(45) NOT NULL,
+  `country` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`airport_id`))
+ 
+ 
+CREATE TABLE `flight` (
+  `flight_id` INT NOT NULL,
+  `flight_no` VARCHAR(45) NOT NULL,
+  `datetime` DATETIME NOT NULL,
+  `cost_of_flight` DECIMAL NOT NULL,
+  `num_of_seats` INT NOT NULL,
+  `arriving_airport_id` INT NOT NULL,
+  `departing_airport_id1` INT NOT NULL,
+  PRIMARY KEY (`flight_id`),
+  INDEX `fk_flight_airport1_idx` (`arriving_airport_id` ASC) VISIBLE,
+  INDEX `fk_flight_airport2_idx` (`departing_airport_id1` ASC) VISIBLE,
+  CONSTRAINT `fk_flight_airport1`
+    FOREIGN KEY (`arriving_airport_id`)
+    REFERENCES `airport` (`airport_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_flight_airport2`
+    FOREIGN KEY (`departing_airport_id1`)
+    REFERENCES `airport` (`airport_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ 
+ 
+CREATE TABLE `user` (
+  `user_id` INT NOT NULL,
+  `admin` TINYINT NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `firstname` VARCHAR(20) NOT NULL,
+  `lastname` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `phone_number` VARCHAR(15) NULL,
+  PRIMARY KEY (`user_id`))
+ 
+ 
+CREATE TABLE `passenger` (
+  `passenger_id` INT NOT NULL,
+  `firstname` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `date_of_birth` DATE NOT NULL,
+  `passport_number` VARCHAR(10) NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`passenger_id`),
+  INDEX `fk_passenger_user1_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_passenger_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `user` (`user_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ 
+ 
+CREATE TABLE `order` (
+  `order_id` INT NOT NULL,
+  `order_done_datetime` DATETIME NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `flight_id` INT NOT NULL,
+  `passenger_id` INT NOT NULL,
+  PRIMARY KEY (`order_id`),
+  INDEX `fk_order_flight1_idx` (`flight_id` ASC) VISIBLE,
+  INDEX `fk_order_passenger1_idx` (`passenger_id` ASC) VISIBLE,
+  CONSTRAINT `fk_order_flight1`
+    FOREIGN KEY (`flight_id`)
+    REFERENCES `flight` (`flight_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_order_passenger1`
+    FOREIGN KEY (`passenger_id`)
+    REFERENCES `passenger` (`passenger_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)

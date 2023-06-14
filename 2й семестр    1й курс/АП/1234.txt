@@ -1,0 +1,688 @@
+2 лаба
+
+
+
+Новий рік 
+
+#include <bits/stdc++.h>
+using namespace std;
+int b,n;
+long double l,r,m;
+vector<long double> arr;
+bool check(long double x){
+    int counter=0;
+    for(int i=0;i<min(b,n);i++){
+        if(arr[i]>=x)counter+=(long long)(arr[i]/x);
+    }
+    if(counter>=b)return true;
+    return false;
+}
+
+int main(){
+    const long double cnst=(4/3.0)*acos(-1);
+    cout.precision(8);
+    cin>>b>>n;
+    for(int i=0;i<n;i++){
+        long long int k;
+        cin>>k;
+        arr.push_back(cnst*pow(k,3));
+    }
+    l=0;
+    r=1e9;
+    sort(arr.begin(), arr.end());
+    reverse(arr.begin(), arr.end());
+    while((r-l)>1e-11){
+        m=(l+r)/2;
+        if(check(m))l=m;
+        else r=m;
+    }
+    long double res=r*b;
+    cout<<fixed<<res;
+}
+//b*log(b)-bin+check   *    (n*log(n))-sort
+
+
+
+Депутатські краватки 
+
+#include <bits/stdc++.h>
+using namespace std;
+int b,n;
+long double l,r,m;
+vector<long double> arr;
+bool check(long double x){
+    int counter=0;
+    for(auto y:arr){
+        if(y>=x)counter+=(long long)(y/x);
+    }
+    if(counter>=b)return true;
+    return false;
+}
+
+int main(){
+    cout.precision(4);
+    cin>>n>>b;
+    for(int i=0;i<n;i++){
+        long long int k;
+        cin>>k;
+        arr.push_back(k);
+    }
+    l=0;
+    r=1e9;
+    while((r-l)>1e-5){
+        m=(l+r)/2;
+        if(check(m))l=m;
+        else r=m;
+    }
+    long double res=r;
+    cout<<fixed<<res;
+}
+//n*log(b)
+
+
+
+
+
+
+
+Сума двох
+
+#include <bits/stdc++.h>
+using namespace std;
+
+long long int n,m,x,res;
+long long int l,r,mid;
+vector<long long int> a,b;
+
+void inp(int A,vector<long long int> &ARR){
+    for(int i=0;i<A;i++){
+        long long int k;cin>>k;
+        ARR.push_back(k);
+    }
+}
+void out(vector<long long int> lol){
+    for(auto g:lol){
+        cout<<g<<" ";
+    }
+    cout<<endl;
+}
+/*
+long double bin(){
+    while(l!=r){
+        mid=(l+r)/2;
+        if(b[mid]<=)l=mid;
+        else r=mid;
+    }
+    return r;
+}
+ */
+
+int main(){
+    cin>>n>>m>>x;
+    res=1e25;
+    inp(n,a);
+    inp(m,b);
+    sort(b.begin(), b.end());
+    for(auto y:a){
+        l=0;
+        r=m-1;
+        res=min(abs(y+b[0]-x),res);
+        res=min(abs(y+b[m-1]-x),res);
+        while(l!=r){
+            mid=(l+r+1)/2;
+            if(b[mid]<=x-y)l=mid;
+            else r=mid-1;
+        }
+        if(l+1<m){
+            res=min(res,abs(y+b[l+1]-x));
+        }
+        res=min(res,abs(y+b[l]-x));
+
+    }
+    cout<<res;
+}
+//(n+m)*log(m) 
+//4 3 7 1 4 2 10 7 3 8
+
+
+
+
+
+
+Вечірня прогулянка
+
+#include <bits/stdc++.h>
+using namespace std;
+
+long long int l,r,mid,a,b,c;
+long long int bin(){
+    while(l!=r){
+        mid=(l+r)/2;
+        mid - mid * a / b < c ? (l = mid + 1) : (r = mid);
+    }
+    return r;
+}
+//<З
+int main() {
+    cin>>a>>b>>c;
+    for(int i=0;i<100000;i++){
+        i=i+0;
+    }
+    for(int i=0;i<100000;i++){
+        i=i+0;
+    }
+    for(int i=0;i<100000;i++){
+        i=i+0;
+    }
+    for(int i=0;i<100000;i++){
+        i=i+0;
+    }
+    for(int i=0;i<100000;i++){
+        i=i+0;
+    }
+    l=0;r=1e18;
+    long long int res=bin();
+    cout<<res*a;
+}
+
+
+
+
+
+Футбольний торт
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+#define EPS 1e-7
+ld coef=M_PI*4.0/3.0;
+
+ld VSeg(ld h,ld r){ return M_PI * pow(h,2) * (r - h / 3.0); }
+
+ld VSfer(ld r){ return coef*pow(r,3); }
+
+ld VCObol(ld d, ld r, ld h){ return VSeg(h, r) - VSeg(h-d, r-d); }
+
+ld cost1(ld h, ld d, ld r, ld c){
+    //cout<<1<<endl;
+    return (VSeg(h, r) * c) / 1.0;
+}
+ld cost2(ld h, ld d, ld r, ld c){
+    //cout<<2<<endl;
+    return (VSeg(h-d,r-d) + VCObol(d, r, h) * c) / 1.0;
+}
+ld cost3(ld h, ld d, ld r, ld c){
+    //cout<<3<<endl;
+    return (VSfer(r-d) + (VSeg(h, r) - VSfer(r-d)) * c) / 1.0;
+}
+
+ld cost(ld h, ld r, ld d, ld c){
+    if(h <= d) return cost1(h, d, r, c);
+    if(h >= (2*r - d)) return cost3(h, d, r, c);
+    return cost2(h, d, r, c);
+}
+
+int main() {
+    cout.precision(7);
+    ld r, d, c, k;
+    //r=3.0;d=1.0;c=2.0;k=2.0;
+    cin >> r >> d >> c >> k;
+    ld left =  r * (-1.0), right = r * 1.0, mid;
+    while ((right - left) >= EPS){
+        mid = (ld) ((left +  right)) / 2.0;
+        //cout<<left<<" "<<mid<<" "<<right<<endl;
+        //cout << cost(r-mid, r, d, c) << endl;
+        if(cost(r-mid, r, d, c) >= k) left = mid ;
+        else right = mid;
+    }
+    cout<<fixed<<left;
+}
+//2.668087408
+
+
+
+
+
+
+
+
+
+
+
+
+Свічки
+
+#include <bits/stdc++.h>
+using namespace std;
+int b,n;
+long double l,r,m;
+vector<long double> arr;
+bool check(long double x){
+    int counter=0;
+    for(auto y:arr){
+        if(y>=x)counter+=(long long)(y/x);
+    }
+    if(counter>=b)return true;
+    return false;
+}
+
+int main(){
+    cout.precision(7);
+    cin>>b>>n;
+    for(int i=0;i<n;i++){
+        long long int k;
+        cin>>k;
+        arr.push_back(k);
+    }
+    l=0;
+    r=1e9;
+    while((r-l)>1e-8){
+        m=(l+r)/2;
+        if(check(m))l=m;
+        else r=m;
+    }
+    long double res=r;
+    cout<<fixed<<res;
+}
+//n+log(b)
+
+
+
+
+
+
+
+
+
+
+Максим та загадкова оцінка
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+#define EPS 1e-7
+ld coef=M_PI*4.0/3.0;
+
+vector <ll> arr;
+void chisla(string a){
+    arr.push_back(stoll(a));
+    while(next_permutation(a.begin(),a.end())){
+        arr.push_back(stoll(a));
+    }
+}
+int main() {
+    ll n, k;
+    cin >> n >> k;
+    vector <ll> arr;
+    vector <bool> check;
+    for(ll i = 0; i < n; i++){
+        ll p;
+        cin >> p;
+        arr.push_back(p);
+        check.push_back(true);
+    }
+    ll left = -1e9, right = 1e9;
+    while(right>=left) {
+        ll mid = (left + right) / 2ll;
+        ll sum = 0;
+        for (ll i = 0; i < n; i++) {
+            ll p = arr[i] - mid * (i + 1);
+            ll nol = 0;
+            sum += max(p, nol);
+        }
+        if (sum > k) left = mid + 1;
+        else right = mid - 1;
+    }
+    ll sum = 0;
+    for (ll i = 0; i < n; i++) {
+        ll p = arr[i] - right * (i + 1);
+        ll nol = 0;
+        sum += max(p, nol);
+    }
+    cout<< right <<" "<< sum;
+}
+
+//5 6 4 7 9 3 4
+
+
+
+
+
+
+
+Кінець
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+
+ld lw, rw, r, n;
+vector<ld> x, y; //x - first y - last
+vector<vector<ll>> graph;
+vector<bool> visited;
+
+void builDer(ll i, ll j){
+    graph[i].push_back(j);
+    graph[j].push_back(i);
+}
+
+void dfs(ll v){
+
+    visited[v] = true;
+    for(auto x: graph[v]){
+        if(!visited[x]){
+            dfs(x);
+        }
+    }
+}
+
+bool check(ld mid){
+    for(ll i = 0; i < n + 2; i++) graph[i].clear();
+    for(ll i = 0 ; i < n; i++){
+        if (mid >= abs(x[i] - lw) - r) builDer(i, n);
+        if (mid >= abs(x[i] - rw) - r) builDer(i, n + 1);
+        for(ll j = i + 1; j < n; j++){
+            if (mid >= (sqrt(pow(x[i] - x[j], 2) + pow(y[i] - y[j], 2)) - 2 * r)) builDer(i, j);
+        }
+    }
+    visited.assign(n + 2, false);
+    dfs(n);
+    return visited[n + 1];
+}
+
+
+
+int main(){
+    cin >> lw >> rw >> r >> n;
+    x.resize(n, 0);
+    y.resize(n, 0);
+    visited.resize(n + 2);
+    graph.resize(n + 2);
+    for (ll i = 0; i < n; i++) cin >> x[i] >> y[i];
+    ld left = 0, right = 1e9 + 1;
+    while ((right - left) > 1e-5){
+        ld mid = (right + left) / 2;
+        if(!check(mid)) left = mid;
+        else right = mid;
+    }
+    cout.precision(4);
+    cout << fixed << right << endl;
+}
+//0 90 3 4 10 10 70 10 50 50 10 90
+
+
+
+
+
+
+
+
+
+Жахливий сон
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+
+ld xAngle, yAngle, n;
+vector<ld> x, y; //   x - first y - last
+vector<vector<ll>> graph;
+vector<bool> visited;
+
+void builDer(ll i, ll j){
+    graph[i].push_back(j);
+    graph[j].push_back(i);
+}
+
+void dfs(ll v){
+    visited[v] = true;
+    for(auto x: graph[v]){
+        if(!visited[x]){
+            dfs(x);
+        }
+    }
+}
+
+bool check(ld mid){
+    for(ll i = 0; i < n + 2; i++) graph[i].clear();
+    for(ll i = 0 ; i < n; i++){
+        if (mid / 2 >= (xAngle - x[i])  or mid / 2 >= y[i] - 0) builDer(i, n);
+        if (mid / 2 >= (x[i] - 0) or mid / 2 >= (yAngle - y[i]) ) builDer(i, n + 1);
+        for(ll j = i + 1; j < n; j++){
+            if (mid >= (sqrt(pow(x[i] - x[j], 2) + pow(y[i] - y[j], 2)))) builDer(i, j);
+        }
+    }
+    visited.assign(n + 2, false);
+    dfs(n);
+    return visited[n + 1];
+}
+
+
+
+int main(){
+    cin >> xAngle >> yAngle >> n;
+    x.resize(n, 0);
+    y.resize(n, 0);
+    visited.resize(n + 2);
+    graph.resize(n + 2);
+    for (ll i = 0; i < n; i++) cin >> x[i] >> y[i];
+    ld left = 0, right = 1e9 + 1;
+    while ((right - left) > 1e-5){
+        ld mid = (right + left) / 2;
+        if(!check(mid)) left = mid;
+        else right = mid;
+    }
+    cout.precision(4);
+    cout << fixed << right / 2 << endl;
+}
+//15 20 2 2 7 7 3
+
+
+
+
+
+
+
+
+
+4 лаба 
+
+Сузір'я
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+
+vector<vector<ll>> graph;
+vector<bool> visited;
+ll counter ;
+void builDer(ll i, ll j){
+    graph[i].push_back(j);
+    graph[j].push_back(i);
+}
+
+void dfs(ll v){
+    visited[v] = true;
+    for(auto x: graph[v]){
+        if(!visited[x]){
+            counter ++;
+            dfs(x);
+        }
+        else{
+            counter++;
+        }
+    }
+}
+
+int main(){
+    ll n, m;
+    counter = 0;
+    cin >> n >> m;
+    graph.resize(n);
+    for(ll i = 0; i < m; i++){
+        ll a, b;
+        cin >> a >> b;
+        builDer(a - 1,b - 1);
+    }
+    vector<ll> nV;
+    ll suz = 0,  tmp = 0;
+    visited.assign(n, false);
+    for(ll i = 0; i < n; i++){
+        if(!visited[i]){
+            dfs(i);
+            suz++;
+            nV.push_back(counter);
+            counter = 0;
+        }
+    }
+    cout << suz << endl;
+    std::sort(nV.begin(), nV.end());
+    for(auto x: nV) cout << x / 2 << endl;
+}
+
+//6 5 1 2 2 3 4 5 2 1 3 1
+
+
+
+
+
+
+
+
+
+Поле Магічних Кругів
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+
+vector<vector<ll>> graph;
+vector<bool> visited;
+
+void builDer(ll i, ll j){
+    graph[i].push_back(j);
+    graph[j].push_back(i);
+}
+
+ll counter = 0;
+void dfs(ll v){
+    visited[v] = true;
+    for(auto x: graph[v]){
+        if(!visited[x]){
+            dfs(x);
+        }
+    }
+}
+
+int main(){
+    ll n;
+    cin >> n;
+
+    visited.assign(n, false);
+    graph.resize(n);
+    vector<pair<ld, ld>> coords;
+    vector<ld> rad;
+
+    for(ll i = 0; i < n; i++){
+        ld a, b, c;
+        cin >> a >> b >> c;
+        coords.push_back({a, b});
+        rad.push_back(c);
+    }
+
+    for(ll i  = 0; i < n; i++){
+        for(ll j = i + 1; j < n; j++){
+            if(sqrt(pow(coords[i].first - coords[j].first, 2) + pow(coords[i].second - coords[j].second, 2)) <= rad[i] + rad [j]){
+                builDer(i, j);
+            }
+        }
+    }
+
+    for(ll i = 0; i < n; i++) {
+        if(!visited[i]) {
+            dfs(i);
+            counter++;
+        }
+    }
+
+    cout << counter ;
+}
+//3 0 0 5 10 0 5 0 10 5
+//2 0 0 2 3 4 2
+
+
+
+
+
+
+Велике чаювання
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+
+vector<vector<ll>> graph;
+vector<bool> visited;
+vector< ll > tea;
+ll company;
+void builDer(ll i, ll j){
+    graph[i].push_back(j);
+    graph[j].push_back(i);
+}
+
+void dfs(ll v){
+
+    visited[v] = true;
+    company += tea[v];
+    for(auto x: graph[v]){
+        if(!visited[x]){
+            dfs(x);
+        }
+    }
+}
+
+int main(){
+    ll n, m;
+    cin >> n >> m;
+    visited.assign(n, false);
+    graph.resize(n);
+
+    for(ll i = 0; i < n; i++){
+        ll a, b;
+        cin >> a >> b;
+        tea.push_back(a - b);
+    }
+    for(ll i = 0; i < m; i++){
+        ll a, b;
+        cin >> a >> b;
+        builDer(a - 1, b - 1);
+    }
+    ll res = 0;
+    //for(auto x : tea) cout << x << " ";
+    //cout << endl;
+    for(ll i = 0; i < n; i++){
+        company = 0;
+        if(!visited[i]){
+            dfs(i);
+        }
+        if(company > 0){
+            res += company;
+        }
+
+    }
+    cout << res;
+}
+
+//   3 1 10 3 2 10 7 6 1 2
+
+
+
+
+

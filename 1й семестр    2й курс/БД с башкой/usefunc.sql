@@ -1,0 +1,1 @@
+select masterinfo('Brown')

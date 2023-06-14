@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "e35b2aaa-0539-4e3f-ba15-7fd47bc642a4",
+		"name": "ServiceCenterAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24210600"
+	},
+	"item": [
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "getDevices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addDevice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceid\": 3,\r\n  \"firm\": \"Samsung\",\r\n  \"model\": \"S1235\",\r\n  \"status\": \"arrived\",\r\n  \"ownerid\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDevice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deviceid\": 3,\r\n  \"firm\": \"Samsung\",\r\n  \"model\": \"S1235\",\r\n  \"status\": \"ready\",\r\n  \"ownerid\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeviceByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"arrived\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device/findByStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"findByStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeviceByFirm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firm\":\"Apple\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device/findByFirm",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"findByFirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDevice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDevice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "getServices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/service",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"5.0\",\r\n    \"serviceid\": 3,\r\n    \"adress\": \"Some str. 45\",\r\n    \"phone\": \"0981165033\",\r\n    \"city\": \"Lviv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateService",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"4.0\",\r\n    \"serviceid\": 10,\r\n    \"adress\": \"Some str. 45\",\r\n    \"phone\": \"0981165033\",\r\n    \"city\": \"Lviv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getServiceDevices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/service/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getService",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteService",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Problem",
+			"item": [
+				{
+					"name": "getProblems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/problem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProblem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch\": \"other\",\r\n    \"problemid\": 3,\r\n    \"daysToSolve\": 5.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/problem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProblem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch\": \"os\",\r\n    \"problemid\": 3,\r\n    \"daysToSolve\":4.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/problem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProblemsByBranch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch\":\"os\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/problem/findByBranch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem",
+								"findByBranch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProblem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/problem/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProblem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/problem/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"problem",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2ODY0MjYwNCwianRpIjoiMjkwODMwNmYtNzZkNi00NDA3LThkNjItMDY0NDUyZmU2YzFjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15X25pY2tuYW1lIiwibmJmIjoxNjY4NjQyNjA0LCJleHAiOjE2Njg2NDM1MDR9.TwgOD_SmOdiVQbpNBVeyYt4lWFkjf2fHGllIHzPvEW8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userid\": 3,\r\n    \"phone\": \"+3990567788\",\r\n    \"username\": \"my_nickname\",\r\n    \"password\": \"pass123\",\r\n    \"email\": \"my@gmail.com\",\r\n    \"lastname\": \"Shevchenko\",\r\n    \"service_centerid\": 1,\r\n    \"firstname\": \"Volodymyr\",\r\n    \"userStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"my_nickname\",\r\n    \"password\": \"pass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userid\": 3,\r\n    \"phone\": \"+3990567799\",\r\n    \"username\": \"my_nickname\",\r\n    \"password\": \"pass123\",\r\n    \"email\": \"my@gmail.com\",\r\n    \"lastname\": \"Shevchenko\",\r\n    \"service_centerid\": 1,\r\n    \"firstname\": \"Volodymyr\",\r\n    \"userStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/my_nickname",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"my_nickname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/my_nickname",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"my_nickname"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserDevices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/user000/device",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"user000",
+								"device"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProblemToDevice",
+			"item": [
+				{
+					"name": "getDeviceProblems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/device/2/problem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"2",
+								"problem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addDeviceProblem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branch\": \"hardware\",\r\n    \"problemid\": 4,\r\n    \"daysToSolve\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/device/1/problem",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"1",
+								"problem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerid\": 3,\r\n    \"phone\": \"+3990567799\",\r\n    \"username\": \"my_nickname\",\r\n    \"password\": \"pass123\",\r\n    \"email\": \"my@gmail.com\",\r\n    \"lastname\": \"Shevchenko\",\r\n    \"service_centerid\": 1,\r\n    \"firstname\": \"Volodymyr\",\r\n    \"userStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDeviceProblem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/device/3/problem/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"3",
+								"problem",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addDeviceExistingProblem",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/device/3/problem/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"3",
+								"problem",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDeviceProblem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/device/1/problem/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"device",
+								"1",
+								"problem",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:5000/api/v1",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,27 @@
+use Service
+
+
+
+
+db.createCollection("Servicecenter")
+
+
+
+
+db.Servicecenter.insertOne({"id":1, "dayoffid":1, "city":'Lviv', "OLEG": 1000})
+
+
+
+
+db.job.aggregate( [
+  
+  {
+     $lookup:
+       {
+         from: "location",
+         localField: "location_id",
+         foreignField: "_id",
+         as: "location_info"
+       }
+  }
+] )

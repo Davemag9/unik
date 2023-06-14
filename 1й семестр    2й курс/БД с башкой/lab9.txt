@@ -1,0 +1,87 @@
+CREATE OR REPLACE FUNCTION settype()
+  RETURNS TRIGGER 
+AS
+$$
+BEGIN
+	UPDATE device SET typeid = 8
+	WHERE typeid = OLD.typeid;
+	RETURN NULL;
+END; $$ LANGUAGE PLPGSQL;
+
+
+CREATE OR REPLACE TRIGGER deleteType
+  BEFORE DELETE
+  ON devicetype
+  FOR EACH ROW
+  EXECUTE PROCEDURE settype();
+
+
+INSERT INTO devicetype VALUES (8, 'NoTypeInfo');
+
+INSERT INTO devicetype VALUES (9, 'blalala');
+INSERT INTO device VALUES (51, 'bla bla bla', 3648, 5, 19, 9);
+DELETE FROM public.devicetype WHERE typeid IN (9);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE OR REPLACE FUNCTION setDate()
+  RETURNS TRIGGER 
+AS
+$$
+BEGIN
+	IF NEW.receiptdata <> now()::DATE THEN
+		UPDATE offer SET receiptdata = now()::DATE WHERE offerid=NEW.offerid;
+	END IF;
+
+	RETURN NEW;
+END; $$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE TRIGGER trueDate
+  AFTER INSERT
+  ON offer
+  FOR EACH ROW
+  EXECUTE PROCEDURE setDate();
+
+INSERT INTO offer VALUES (51, '2022-09-21', 'new', 3, 7);
+
+
+
+
+
+
+
+
+
+
+
+CREATE OR REPLACE FUNCTION setQualification()
+  RETURNS TRIGGER 
+AS
+$$
+BEGIN
+	IF NEW.qualification < OLD.qualification THEN 
+		NEW.qualification:=OLD.qualification;        
+	END IF;
+	RETURN NEW;
+END; $$ LANGUAGE PLPGSQL;
+
+CREATE OR REPLACE TRIGGER updateQualification
+  BEFORE UPDATE
+  ON master
+  FOR EACH ROW
+  EXECUTE PROCEDURE setQualification();
+
+UPDATE master set qualification = 4 where masterid = 1

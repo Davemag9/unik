@@ -1,0 +1,3 @@
+C:/Users/davem/CLionProjects/RozrahaFinalCut/cmake-build-debug/CMakeFiles/RozrahaFinalCut.dir
+C:/Users/davem/CLionProjects/RozrahaFinalCut/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/davem/CLionProjects/RozrahaFinalCut/cmake-build-debug/CMakeFiles/rebuild_cache.dir

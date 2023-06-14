@@ -1,0 +1,4 @@
+cd C:\Users\davem\source\repos\os5\x64\Debug
+
+
+rundll32 os5.dll,startCode
