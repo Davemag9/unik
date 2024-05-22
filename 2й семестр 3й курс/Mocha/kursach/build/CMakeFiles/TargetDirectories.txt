@@ -1,0 +1,3 @@
+/Users/davemag9/VSCode/Mocha/Mochurad Hvoida/build/CMakeFiles/MyProject.dir
+/Users/davemag9/VSCode/Mocha/Mochurad Hvoida/build/CMakeFiles/edit_cache.dir
+/Users/davemag9/VSCode/Mocha/Mochurad Hvoida/build/CMakeFiles/rebuild_cache.dir
