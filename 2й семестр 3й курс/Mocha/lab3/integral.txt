@@ -1,0 +1,41 @@
+started writing to file, flow: 1, time: 0.000402
+stopped writing to file, flow: 1, time: 0.000421
+
+flow number 0 blocked. time: 0.000425
+started writing to file, flow: 4, time: 0.000447
+flow number 3 blocked. time: 0.000451
+flow number 6 blocked. time: 0.000408
+flow number 2 blocked. time: 0.000405
+stopped writing to file, flow: 4, time: 0.000452
+
+flow number 7 blocked. time: 0.000468
+flow number 5 blocked. time: 0.000425
+flow number 6 blocked. time: 0.205477
+flow number 3 blocked. time: 0.205490
+flow number 2 blocked. time: 0.205507
+flow number 7 blocked. time: 0.205513
+flow number 5 blocked. time: 0.205491
+started writing to file, flow: 0, time: 0.205477
+stopped writing to file, flow: 0, time: 0.205532
+
+started writing to file, flow: 6, time: 0.410540
+flow number 5 blocked. time: 0.410557
+flow number 2 blocked. time: 0.410566
+flow number 3 blocked. time: 0.410541
+flow number 7 blocked. time: 0.410546
+stopped writing to file, flow: 6, time: 0.410560
+
+started writing to file, flow: 5, time: 0.615604
+stopped writing to file, flow: 5, time: 0.615613
+
+flow number 3 blocked. time: 0.615608
+flow number 2 blocked. time: 0.615631
+started writing to file, flow: 7, time: 0.615616
+stopped writing to file, flow: 7, time: 0.615648
+
+started writing to file, flow: 2, time: 0.816942
+stopped writing to file, flow: 2, time: 0.816944
+
+started writing to file, flow: 3, time: 0.820654
+stopped writing to file, flow: 3, time: 0.820655
+
